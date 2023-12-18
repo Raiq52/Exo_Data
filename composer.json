@@ -1,0 +1,21 @@
+{
+    "name": "bastien/kraken",
+    "autoload": {
+        "psr-4": {
+            "Bastien\\Kraken\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Raiq52",
+            "email": "bastien.touboulie@gmail.com"
+        }
+    ],
+    "require": {
+        "doctrine/orm": "^2.11.0",
+        "doctrine/dbal": "^3.2",
+        "symfony/yaml": "^5.4",
+        "symfony/cache": "^5.4",
+        "doctrine/annotations": "^2.0"
+    }
+}
