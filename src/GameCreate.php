@@ -1,15 +1,39 @@
 <?php
 
-require_once "bootstrap.php";
-require_once "Games.php";
+// require_once "vendor/autoload.php"; // Inclure Doctrine (si nécessaire)
+require_once "../bootstrap.php";
 
-$newGame = new Games();
-$newGame->setNom('Legs of legends');
-$newGame->setGenre('MOOBA');
-$newGame->setStatut('ruiné');
-$newGame->setDateDebut('trop longtemps');
-$newGame->setDateFin('trop longtemps');
-$newGame->setChefProjet('Un gros con');
+use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\ORMSetup;
 
-$entityManager->persist($newGame);
-$entityManager->flush();
+if (isset( $_POST )) {
+    var_dump("bite");
+    $nom = $_POST['nom'] ;
+    $genre = $_POST['genre'] ;
+    $statut = $_POST['statut'] ;
+    $dateDebut = $_POST['date_debut'] ;
+    $dateFin = $_POST['date_fin'] ;
+    $chefProjet = $_POST['chef_projet'] ;
+    
+    require_once "Games.php";
+
+    $newGame = new Games();
+    $newGame->setNom($nom);
+    $newGame->setGenre($genre);
+    $newGame->setStatut($statut);
+    $newGame->setDateDebut($dateDebut);
+    $newGame->setDateFin($dateFin);
+    $newGame->setChefProjet($chefProjet);
+
+    $entityManager->persist($newGame);
+    $entityManager->flush();
+
+    ?>
+    <script>
+        setTimeout(5000);
+    </script>
+    <?php
+    header("Location: ../index.html");
+    exit();
+}
+?>
