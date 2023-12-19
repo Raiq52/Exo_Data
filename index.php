@@ -1,3 +1,6 @@
+<?php
+
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -29,4 +32,7 @@
         <input type="submit" value="Créer">
     </form>
 </body>
+<?php
+include("src/GameGet.php");
+?>
 </html>

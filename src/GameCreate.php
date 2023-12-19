@@ -1,7 +1,7 @@
 <?php
 
 // require_once "vendor/autoload.php"; // Inclure Doctrine (si nécessaire)
-require_once "../bootstrap.php";
+require "../bootstrap.php";
 
 use Doctrine\ORM\EntityManager;
 use Doctrine\ORM\ORMSetup;
@@ -29,11 +29,9 @@ if (isset( $_POST )) {
     $entityManager->flush();
 
     ?>
-    <script>
-        setTimeout(5000);
-    </script>
+    
     <?php
-    header("Location: ../index.html");
+    header("Location: ..\index.php");
     exit();
 }
 ?>
